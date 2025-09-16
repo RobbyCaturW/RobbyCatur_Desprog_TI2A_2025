@@ -1,9 +1,9 @@
 <html>
     <head>
-        <title></title>
+        <title>Biodata</title>
     </head>
     <body>
-        <form action="" method="post">
+        <form name="biodata" action="" method="post">
             <table border="3" width="100%">
                 <tr>
                     <td colspan="3">
@@ -20,7 +20,7 @@
                     <td><b>NAMA LENGKAP</b></td>
                     <td>:</td>
                     <td>
-                        <input type="text" name="name" value="">
+                        <input type="text" id="name" name="name" value="">
                     </td>
                 </tr>
                 <tr>
@@ -69,8 +69,8 @@
                     <td><b>JENIS KELAMIN</b></td>
                     <td>:</td>
                     <td>
-                        <input type="radio" name="jk" value="">Laki-laki
-                        <input type="radio" name="jk" value="">Perempuan
+                        <input type="radio" name="jk" value="Laki-laki">Laki-laki
+                        <input type="radio" name="jk" value="Perempuan">Perempuan
                     </td>
                 </tr>
                 <tr>
@@ -79,12 +79,12 @@
                     <td>
                         <select name="agama">
                             <option value="" disabled selected>---- Pilih Agama ----</option>
-                            <option value="islam">Islam</option>
-                            <option value="kristen">Kristen</option>
-                            <option value="katolik">Katolik</option>
-                            <option value="budha">Buddha</option>
-                            <option value="hindu">HIndu</option>
-                            <option value="konghucu">Konghucu</option>
+                            <option value="Islam">Islam</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Katolik">Katolik</option>
+                            <option value="Buddha">Buddha</option>
+                            <option value="Hindu">HIndu</option>
+                            <option value="Konghucu">Konghucu</option>
                         </select>
                     </td>
                 </tr>
@@ -92,19 +92,19 @@
                     <td><b>GOLONGAN DARAH</b></td>
                     <td>:</td>
                     <td>
-                        <input type="radio" name="goldar" value="o">O <br>
-                        <input type="radio" name="goldar" value="a">A <br>
-                        <input type="radio" name="goldar" value="b">B <br>
-                        <input type="radio" name="goldar" value="ab">AB
+                        <input type="radio" name="goldar" value="O">O <br>
+                        <input type="radio" name="goldar" value="A">A <br>
+                        <input type="radio" name="goldar" value="B">B <br>
+                        <input type="radio" name="goldar" value="AB">AB
                     </td>
                 </tr>
                 <tr>
                     <td><b>HOBI</b></td>
                     <td>:</td>
                     <td>
-                        <input type="checkbox" name="membaca" value="membaca">Membaca <br>
-                        <input type="checkbox" name="nonton" value="menonton">Nonton <br>
-                        <input type="checkbox" name="beramal" value="beramal">Beramal
+                        <input type="checkbox" name="hobi" value="Membaca">Membaca <br>
+                        <input type="checkbox" name="hobi" value="Menonton">Nonton <br>
+                        <input type="checkbox" name="hobi" value="Beramal">Beramal
                     </td>
                 </tr>
                 <tr>
@@ -142,11 +142,70 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <input type="submit" value="Submit">
+                    <td colspan="3">
+                        <input type="button" value="Submit" onclick="tampilkanData()">
                     </td>
                 </tr>
             </table>
         </form>
+
+        <div id="result"></div>
+        <script>
+            async function tampilkanData() {
+                const nama = document.biodata.name.value
+                const kelas = document.biodata.kelas.value
+                const prodi = document.biodata.prodi.value
+                const jurusan = document.biodata.jurusan.value
+                const kampus = document.biodata.kampus.value
+                const tgllahir = document.biodata.tgllahir.value
+                const d = new Date(tgllahir)
+                const tmptlahir = document.biodata.tmptlahir.value
+                const jk = document.biodata.jk.value
+                const agama = document.biodata.agama.value
+                const goldar = document.biodata.goldar.value
+                let listHobi = [];
+                const hobi = document.getElementsByName("hobi");
+                for (let i = 0; i < hobi.length; i++) {
+                    if (hobi[i].checked) {
+                        listHobi.push(hobi[i].value);
+                    }
+                }
+                const alamat = document.biodata.alamat.value
+                const kota = document.biodata.kota.value
+                const provinsi = document.biodata.provinsi.value
+                const kwn = document.biodata.kwn.value
+                const nohp = document.biodata.nohp.value
+
+                if (nama && kelas && prodi && jurusan && kampus && tgllahir && tmptlahir && jk && agama && alamat && kota && provinsi && kwn && nohp) {
+                    alert('Data sudah diisi! Silahkan lihat hasilnya')
+                } else {
+                    alert('Harap lengkapi data diri terlebih dahulu!')
+                    return
+                }
+                
+                document.getElementById("result").innerHTML = `
+                <b>Nama:</b> ${nama} <br>
+                <b>Kelas:</b> ${kelas} <br>
+                <b>Prodi:</b> ${prodi} <br>
+                <b>Jurusan:</b> ${jurusan} <br>
+                <b>Kampus:</b> ${kampus} <br>
+                <b>Tanggal Lahir:</b> ${d.toLocaleDateString('id', {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric"
+                })} <br>
+                <b>Tempat Lahir:</b> ${tmptlahir} <br>
+                <b>Jenis Kelamin:</b> ${jk} <br>
+                <b>Agama:</b> ${agama} <br>
+                <b>Golongan Darah:</b> ${goldar ? goldar : "-"} <br>
+                <b>Hobi:</b> ${listHobi.length > 0 ? listHobi.join(", ") : "-"} <br>
+                <b>Alamat:</b> ${alamat} <br>
+                <b>Kota:</b> ${kota} <br>
+                <b>Provinsi:</b> ${provinsi} <br>
+                <b>Kewarganegaraan:</b> ${kwn} <br>
+                <b>No. Handphone:</b> ${nohp} <br>
+                `
+            }
+        </script>
     </body>
-</html
+</html>
