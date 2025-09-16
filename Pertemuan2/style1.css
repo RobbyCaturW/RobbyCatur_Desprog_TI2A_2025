@@ -6,24 +6,9 @@ html, body {
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #ddd;
+    line-height: 1000px;
 }
 
 .container-satu {
     display: flex;
-}
-
-.kolom-utama {
-    flex: auto;
-    order: 2;
-    width: 50%;
-}
-.sidebar-satu {
-    flex: content;
-    order: 1;
-    width: 25%;
-}
-.sidebar-dua {
-    flex: auto;
-    order: 3;
-    width: 25%;
 }
