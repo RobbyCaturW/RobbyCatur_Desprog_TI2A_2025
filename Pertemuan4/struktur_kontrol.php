@@ -82,4 +82,35 @@ echo "Jumlah tidak lulus: $tidakLulus <br>";
 
 $persenLulus = ($lulus / $totalSiswa) * 100;
 echo "Persentase kelulusan: " .$persenLulus. "%";
+echo "<br><br>";
+
+$nilaiSiswa = [85, 92, 78, 64, 90, 75, 88, 79, 70, 96];
+for ($i = 0; $i < count($nilaiSiswa); $i++) {
+    for ($j = 0; $j < count($nilaiSiswa) - 1; $j++) {
+        if ($nilaiSiswa[$j] > $nilaiSiswa[$j + 1]) {
+            $temp = $nilaiSiswa[$j];
+            $nilaiSiswa[$j] = $nilaiSiswa[$j + 1];
+            $nilaiSiswa[$j + 1] = $temp;
+        }
+    }
+}
+$totalNilai = 0;
+$jumlahSiswaDipakai = 0;
+
+for ($i = 0; $i < count($nilaiSiswa); $i++) {
+    if ($i >= 2 && $i < count($nilaiSiswa) - 2) {
+        $totalNilai += $nilaiSiswa[$i];
+        $jumlahSiswaDipakai++;
+    }
+}
+$rataRata = $totalNilai / $jumlahSiswaDipakai;
+echo "Daftar nilai (sudah diurutkan): ";
+for ($i = 0; $i < count($nilaiSiswa); $i++) {
+    echo $nilaiSiswa[$i] . " ";
+}
+echo "<br>";
+
+echo "Total nilai yang dihitung: $totalNilai <br>";
+echo "Jumlah siswa yang dihitung: $jumlahSiswaDipakai <br>";
+echo "Rata-rata nilai: " . $rataRata;
 ?>
