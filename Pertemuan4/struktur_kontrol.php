@@ -113,4 +113,18 @@ echo "<br>";
 echo "Total nilai yang dihitung: $totalNilai <br>";
 echo "Jumlah siswa yang dihitung: $jumlahSiswaDipakai <br>";
 echo "Rata-rata nilai: " . $rataRata;
+echo "<br><br>";
+
+$hargaProduk = 120000;
+$diskon = 0;
+$hargaAkhir = $hargaProduk;
+
+if ($hargaProduk > 100000) {
+    $diskon = 0.20 * $hargaProduk;
+    $hargaAkhir = $hargaProduk - $diskon;
+}
+
+echo "Harga produk: Rp $hargaProduk <br>";
+echo "Diskon: Rp $diskon <br>";
+echo "Harga yang harus dibayar: Rp $hargaAkhir";
 ?>
