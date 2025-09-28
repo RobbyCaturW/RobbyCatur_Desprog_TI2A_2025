@@ -21,8 +21,15 @@ $hasilOr = $a || $b;
 $hasilNotA = !$a;
 $hasilNotB = !$b;
 
-echo "Hasil And: " .($hasilSama ? "true" : "false").  "<br>";
-echo "Hasil Or: " .($hasilTidakSama ? "true" : "false").  "<br>";
-echo "Hasil Not A: " .($hasilNotA ? $a : $b).  "<br>";
-echo "Hasil Not B: " .($hasilNotB ? $b : $a).  "<br>";
+echo "Nilai awal: a = $a, b = $b <br><br>";
+$a += $b; 
+echo "Setelah a += b  → a = $a <br>";
+$a -= $b; 
+echo "Setelah a -= b  → a = $a <br>";
+$a *= $b; 
+echo "Setelah a *= b  → a = $a <br>";
+$a /= $b; 
+echo "Setelah a /= b  → a = $a <br>";
+$a %= $b; 
+echo "Setelah a %= b  → a = $a <br>";
 ?>
