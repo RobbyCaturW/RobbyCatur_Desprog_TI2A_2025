@@ -21,15 +21,15 @@ $hasilOr = $a || $b;
 $hasilNotA = !$a;
 $hasilNotB = !$b;
 
-echo "Nilai awal: a = $a, b = $b <br><br>";
-$a += $b; 
-echo "Setelah a += b  → a = $a <br>";
-$a -= $b; 
-echo "Setelah a -= b  → a = $a <br>";
-$a *= $b; 
-echo "Setelah a *= b  → a = $a <br>";
-$a /= $b; 
-echo "Setelah a /= b  → a = $a <br>";
-$a %= $b; 
-echo "Setelah a %= b  → a = $a <br>";
+$a += $b;
+$a -= $b;
+$a *= $b;
+$a /= $b;
+$a %= $b;
+
+$hasilIdentik = $a === $b;
+$hasilTidakIdentik = $a !== $b;
+
+echo "a identik dengan b → " . ($hasilIdentik ? "true" : "false") . "<br>";
+echo "a tidak identik dengan b → " . ($hasilTidakIdentik ? "true" : "false") . "<br>";
 ?>
