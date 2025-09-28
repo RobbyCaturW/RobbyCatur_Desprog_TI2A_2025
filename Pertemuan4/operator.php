@@ -30,6 +30,14 @@ $a %= $b;
 $hasilIdentik = $a === $b;
 $hasilTidakIdentik = $a !== $b;
 
-echo "a identik dengan b → " . ($hasilIdentik ? "true" : "false") . "<br>";
-echo "a tidak identik dengan b → " . ($hasilTidakIdentik ? "true" : "false") . "<br>";
+$totalKursi = 45;
+$kursiTerisi = 28;
+
+$kursiKosong = $totalKursi - $kursiTerisi;
+$persenKosong = ($kursiKosong / $totalKursi) * 100;
+
+echo "Jumlah kursi: $totalKursi <br>";
+echo "Kursi terisi: $kursiTerisi <br>";
+echo "Kursi kosong: $kursiKosong <br>";
+echo "Persentase kursi kosong: $persenKosong%";
 ?>
