@@ -60,10 +60,26 @@ foreach ($skorUjian as $skor) {
     $totalSkor += $skor;
 }
 
-$jumlahSiswa = count($skorUjian);
-$rataRata = $totalSkor / $jumlahSiswa;
+$nilaiSiswa = [85, 92, 58, 64, 90, 55, 88, 79, 70, 96];
 
-echo "Total skor ujian adalah: $totalSkor <br>";
-echo "Jumlah siswa: $jumlahSiswa <br>";
-echo "Rata-rata skor ujian adalah: $rataRata";
+$totalSiswa = count($nilaiSiswa);
+$lulus = 0;
+$tidakLulus = 0;
+
+foreach ($nilaiSiswa as $nilai) {
+    if ($nilai < 60) {
+        echo "Nilai: $nilai (Tidak lulus) <br>";
+        $tidakLulus++;
+        continue;
+    }
+    echo "Nilai: $nilai (Lulus) <br>";
+    $lulus++;
+}
+
+echo "<br>Jumlah siswa: $totalSiswa <br>";
+echo "Jumlah lulus: $lulus <br>";
+echo "Jumlah tidak lulus: $tidakLulus <br>";
+
+$persenLulus = ($lulus / $totalSiswa) * 100;
+echo "Persentase kelulusan: " .$persenLulus. "%";
 ?>
