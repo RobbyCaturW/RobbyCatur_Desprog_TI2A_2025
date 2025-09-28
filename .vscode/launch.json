@@ -16,6 +16,18 @@
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Run PHP in Browser",
+            "type": "php",
+            "request": "launch",
+            "runtimeExecutable": "php",
+            "runtimeArgs": [
+                "-S", "localhost:8000",
+                "-t", "${fileDirname}"
+            ],
+            "port": 0,
+            "preLaunchTask": "open-browser"
         }
     ]
 }
