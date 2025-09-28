@@ -9,11 +9,17 @@ $hasilBagi = $a / $b;
 $sisaBagi = $a % $b;
 $pangkat = $a ** $b;
 
-echo "Angka 1: $a <br>Angka 2: $b <br>";
-echo "Hasil Tambah: $hasilTambah<br>";
-echo "Hasil Kurang: $hasilKurang<br>";
-echo "Hasil Kali: $hasilKali<br>";
-echo "Hasil Bagi: $hasilBagi<br>";
-echo "Sisa Bagi: $sisaBagi<br>";
-echo "Hasil Pangkat: $pangkat<br>";
+$hasilSama = $a == $b;
+$hasilTidakSama = $a != $b;
+$hasilLebihKecil  = $a < $b;
+$hasilLebihBesar  = $a > $b;
+$hasilLebihKecilSama  = $a <= $b;
+$hasilLebihBesarSama  = $a >= $b;
+
+echo "Hasil Sama: " .($hasilSama ? "true" : "false").  "<br>";
+echo "Hasil Tidak Sama: " .($hasilTidakSama ? "true" : "false").  "<br>";
+echo "Hasil Lebih Kecil: " .($hasilLebihKecil ? "true" : "false").  "<br>";
+echo "Hasil Lebih Besar: " .($hasilLebihBesar ? "true" : "false").  "<br>";
+echo "Hasil Lebih Kecil Sama: " .($hasilLebihKecilSama ? "true" : "false").  "<br>";
+echo "Hasil Lebih Besar Sama: " .($hasilLebihBesarSama ? "true" : "false").  "<br>";
 ?>
