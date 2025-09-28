@@ -50,4 +50,20 @@ for ($i=1; $i <= $jumlahLahan; $i++) {
 }
 
 echo "Jumlah buah yang akan dipanen adalah: $jumlahBuah";
+
+echo "<br><br>";
+
+$skorUjian = [85, 92, 78, 96, 88];
+$totalSkor = 0;
+
+foreach ($skorUjian as $skor) {
+    $totalSkor += $skor;
+}
+
+$jumlahSiswa = count($skorUjian);
+$rataRata = $totalSkor / $jumlahSiswa;
+
+echo "Total skor ujian adalah: $totalSkor <br>";
+echo "Jumlah siswa: $jumlahSiswa <br>";
+echo "Rata-rata skor ujian adalah: $rataRata";
 ?>
