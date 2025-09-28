@@ -127,4 +127,9 @@ if ($hargaProduk > 100000) {
 echo "Harga produk: Rp $hargaProduk <br>";
 echo "Diskon: Rp $diskon <br>";
 echo "Harga yang harus dibayar: Rp $hargaAkhir";
+echo "<br><br>";
+
+$poin = 620;
+echo "Total skor pemain adalah: $poin <br>";
+echo "Pemain mendapatkan hadiah tambahan? " . ($poin > 500 ? "YA" : "TIDAK");
 ?>
