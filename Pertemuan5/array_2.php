@@ -12,9 +12,14 @@
         'domisili' => 'Malang',
         'jenis_kelamin'=> 'Perempuan'
     ];
-    echo "Nama : {$Dosen['nama']} <br>";
-    echo "Domisili : {$Dosen['domisili']} <br>";
-    echo "Jenis Kelamin : {$Dosen['jenis_kelamin']} <br>";
+    echo '<table border=1 cellpadding=10><tr>';
+    echo "<td>Nama</td>";
+    echo "<td>Domisili</td>";
+    echo "<td>Jenis Kelamin</td></tr>";
+    echo "<tr><td>{$Dosen['nama']}</td>";
+    echo "<td>{$Dosen['domisili']}</td>";
+    echo "<td>{$Dosen['jenis_kelamin']}</td>";
+    echo "</tr></table>";
     ?>
 </body>
 </html>
