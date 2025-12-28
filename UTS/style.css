@@ -1,0 +1,280 @@
+/* --- Konfigurasi Warna Dasar --- */
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #28A745;
+    --danger-color: #DC3545;
+    --background-color: #f8f9fa;
+    --text-color: #343A40;
+    --border-color: #847f7f;
+}
+
+/* --- Global Styles --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Header --- */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow ringan */
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+header h1 i {
+    margin-right: 0.75rem;
+}
+
+/* --- Layout Utama --- */
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+/* --- Card Style --- */
+.card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgb(0, 0, 0); /* Shadow standar */
+    margin-bottom: 2rem;
+    border: 1px solid var();
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h2 i {
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* --- Formulir Styling --- */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+label i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Pesan Error */
+.error-message {
+    color: var(--danger-color);
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+}
+
+.input-error {
+    border: 1px solid var(--danger-color) !important;
+}
+
+/* --- Button Styling --- */
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+    margin-top: 1rem; 
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button i {
+    margin-right: 0.5rem;
+}
+
+#viewDataButton {
+    background-color: var(--secondary-color);
+}
+#viewDataButton:hover {
+    background-color: #1e7e34;
+}
+
+/* --- Tampilan Data (data.html) --- */
+.loan-item {
+    padding: 1.2rem;
+    background-color: #fcfcfc;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--primary-color);
+}
+
+.loan-item h3 {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+.loan-item h4 {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.loan-item p {
+    margin: 0.4rem 0;
+    font-size: 0.95rem;
+}
+
+.loan-actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.loan-actions button {
+    flex: 1;
+    min-width: 140px;
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    margin-top: 0;
+}
+
+.return-btn {
+    background-color: var(--secondary-color);
+}
+.return-btn:hover {
+    background-color: #1e7e34;
+}
+
+.delete-btn {
+    background-color: var(--danger-color);
+}
+.delete-btn:hover {
+    background-color: #bd2130;
+}
+
+.returned-status {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    padding: 0.5rem;
+    background-color: #d4edda;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* --- Penalty/Denda Info --- */
+.penalty-info {
+    font-weight: bold;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.penalty-info.no-penalty {
+    background-color: #D6EAF8; /* Biru muda */
+    color: #1A5276;
+    border: 1px solid #a2c7e5;
+}
+
+.penalty-info.has-penalty {
+    background-color: #FADBD8; /* Merah muda */
+    color: var(--danger-color);
+    border: 1px solid var(--danger-color);
+}
+
+.no-data-message, #loadingMessage {
+    text-align: center;
+    color: #6c757d;
+    padding: 1.5rem;
+    font-style: italic;
+}
+
+/* --- Media Query (Responsif Sederhana) --- */
+@media (max-width: 768px) {
+    main {
+        margin: 1rem;
+        padding: 0;
+    }
+
+    .card {
+        padding: 1rem;
+        border-radius: 0;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .loan-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .loan-actions button {
+        width: 100%;
+        min-width: auto;
+    }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistem Peminjaman Buku Perpustakaan</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <script src="jquery-3.7.1.js"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1><i class="fas fa-book-reader"></i> Pencatatan Peminjaman Buku</h1>
+    </header>
+
+    <main>
+      <section class="card form-section">
+        <h2><i class="fas fa-file-alt"></i>Data Peminjam</h2>
+        
+        <form id="loanForm" method="POST">
+          <div class="form-group">
+            <!-- DATA PEMINJAM -->
+            <label for="name"><i class="fas fa-user"></i> Nama Peminjam:</label>
+            <input id="name" name="name" type="text">
+            <div class="error-message" data-for="name"></div>
+          </div>
+          <div class="form-group">
+            <label for="email"><i class="fas fa-envelope"></i> Email Peminjam:</label>
+            <input id="email" name="email" type="email" >
+            <div class="error-message" data-for="email"></div>
+          </div>
+          <hr>
+
+          <!-- DATA BUKU -->
+          <h2><i class="fa-solid fa-book-open"></i>Data Buku</h2>
+          <div class="form-group">
+            <label for="title"><i class="fas fa-book"></i> Judul Buku:</label>
+            <input id="title" name="title" type="text" >
+            <div class="error-message" data-for="title"></div>
+          </div>
+          <div class="form-group">
+            <label for="author"><i class="fas fa-feather-alt"></i> Penulis:</label>
+            <input id="author" name="author" type="text" >
+            <div class="error-message" data-for="author"></div>
+          </div>
+          <div class="form-group">
+            <label for="year"><i class="fas fa-calendar-alt"></i> Tahun Terbit:</label>
+            <input id="year" name="year" type="number" >
+            <div class="error-message" data-for="year"></div>
+          </div>
+          <hr class="section-divider">
+
+          <!-- JADWAL -->
+          <h2><i class="fas fa-clock"></i> Jadwal Peminjaman</h3>
+          <div class="form-group">
+            <label for="date_borrowed"><i class="fas fa-calendar-check"></i> Tanggal Dipinjam:</label>
+            <input id="date_borrowed" name="date_borrowed" type="date" >
+            <div class="error-message" data-for="date_borrowed"></div>
+          </div>
+          <div class="form-group">
+            <label for="date_due"><i class="fas fa-calendar-times"></i> Tanggal Kembali (Target):</label>
+            <input id="date_due" name="date_due" type="date" >
+            <div class="error-message" data-for="date_due"></div>
+          </div>
+          <div class="form-group">
+            <label for="notes"><i class="fas fa-sticky-note"></i> Catatan (Harus lebih dari 10 karakter)</label>
+            <textarea id="notes" name="notes"></textarea>
+            <div class="error-message" data-for="notes"></div>
+          </div>
+          
+          <!-- SEND FORM -->
+          <button type="submit" id="submitButton"><i class="fas fa-save"></i> Simpan Peminjaman</button>
+        </form>
+
+        <!-- GET DATA -->
+        <hr style="margin-top: 2rem; margin-bottom: 1rem;">
+        <button id="viewDataButton" onclick="window.location.href='data.html'">
+          <i class="fas fa-list-alt"></i> Lihat Data Peminjaman & Denda
+        </button>
+      </section>
+    </main>
+  </body>
+</html>
